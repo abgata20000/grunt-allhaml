@@ -1,11 +1,9 @@
 # grunt-allhaml
 
-> The best Grunt plugin ever.
+> convert each of all the haml files to html file in the directory
 
 ## Getting Started
 This plugin requires Grunt `~0.4.4`
-
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
 npm install grunt-allhaml --save-dev
@@ -19,71 +17,95 @@ grunt.loadNpmTasks('grunt-allhaml');
 
 ## The "allhaml" task
 
-### Overview
-In your project's Gruntfile, add a section named `allhaml` to the data object passed into `grunt.initConfig()`.
-
-```js
-grunt.initConfig({
-  allhaml: {
-    options: {
-      // Task-specific options go here.
-    },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
-  },
-});
-```
 
 ### Options
 
-#### options.separator
+####pathRelativeTo
 Type: `String`
-Default value: `',  '`
 
-A string value that is used to do something with whatever.
+Default value: `'./'`
 
-#### options.punctuation
+####hamlcommand
 Type: `String`
-Default value: `'.'`
 
-A string value that is used to do something else with whatever else.
+Default value: `'haml'`
+
+haml command
+
+####hamloption
+Type: `String`
+
+Default value: `'-q --no-escape-attrs'`
+
+haml command options
+
+
+####in_dir
+Type: `String`
+
+Default value: `'haml'`
+
+Input directopry name
+
+####out_dir
+Type: `String`
+
+Default value: `'html'`
+
+Output directopry name
+
+####in_ex
+Type: `String`
+
+Default value: `'haml'`
+
+Input file extention name
+
+####out_ex
+Type: `String`
+
+Default value: `'html'`
+
+Output file extention name
+
+
+
+
 
 ### Usage Examples
 
 #### Default Options
-In this example, the default options are used to do something with whatever. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result would be `Testing, 1 2 3.`
-
 ```js
 grunt.initConfig({
   allhaml: {
-    options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    options: {
+      in_dir: 'haml',
+      out_dir: 'html',
+      out_ex: 'html'
     },
+    dist: {
+      src: ['<%= allhaml.options.in_dir %>/**/*.haml'],
+      dest: '<%= allhaml.options.out_dir %>'
+    }
   },
 });
 ```
 
 #### Custom Options
-In this example, custom options are used to do something else with whatever else. So if the `testing` file has the content `Testing` and the `123` file had the content `1 2 3`, the generated result in this case would be `Testing: 1 2 3 !!!`
 
 ```js
 grunt.initConfig({
   allhaml: {
     options: {
-      separator: ': ',
-      punctuation: ' !!!',
+      in_dir: 'haml',
+      out_dir: 'html',
+      out_ex: 'html',
+      hamloption: ''
     },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    dist: {
+      src: ['<%= allhaml.options.in_dir %>/**/*.haml'],
+      dest: '<%= allhaml.options.out_dir %>'
+    }
   },
 });
 ```
-
-## Contributing
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).
-
-## Release History
-_(Nothing yet)_

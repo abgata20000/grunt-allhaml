@@ -18,37 +18,8 @@ module.exports = function(grunt) {
   grunt.registerMultiTask('allhaml', 'The best Grunt plugin ever.', function() {
     // Set the target options with some defaults.
     var options = this.options({
-      // Default target is javascript.
-      target: 'html',
-
-      // Default language choice to coffee-script and haml-coffee.
-      language: 'js',
-
-      // Default placement; either `amd` or `global`.
-      placement: 'global',
-
-      // Default global placement namespace to `window`.
-      namespace: 'window.HAML',
-
-      // Default hash of dependencies for AMD.
-      dependencies: {},
-
-      // Default should name include path
-      includePath: false,
-
       // Default path relative to
       pathRelativeTo: './',
-
-      // External haml command to execute, must accept STDIN
-      rubyHamlCommand: 'haml -t ugly',
-
-      // Precompile templates; if false (and target == 'js'), place rendered
-      // HTML in js variables.
-      precompile: true,
-
-      punctuation: '.',
-
-      separator: ', ',
 
       hamlcommand: 'haml',
 
