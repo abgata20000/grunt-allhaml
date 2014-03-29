@@ -40,14 +40,14 @@ Default value: `'-q --no-escape-attrs'`
 haml command options
 
 
-####in_dir
+####inDir
 Type: `String`
 
 Default value: `'haml'`
 
 Input directopry name
 
-####out_dir
+####outDir
 Type: `String`
 
 Default value: `'html'`
@@ -79,13 +79,13 @@ Output file extention name
 grunt.initConfig({
   allhaml: {
     options: {
-      in_dir: 'haml',
-      out_dir: 'html',
+      inDir: 'haml',
+      outDir: 'html',
       out_ex: 'html'
     },
     dist: {
-      src: ['<%= allhaml.options.in_dir %>/**/*.haml'],
-      dest: '<%= allhaml.options.out_dir %>'
+      src: ['<%= allhaml.options.inDir %>/**/*.haml'],
+      dest: '<%= allhaml.options.outDir %>'
     }
   },
 });
@@ -97,14 +97,14 @@ grunt.initConfig({
 grunt.initConfig({
   allhaml: {
     options: {
-      in_dir: 'haml',
-      out_dir: 'html',
+      inDir: 'haml',
+      outDir: 'html',
       out_ex: 'html',
       hamloption: ''
     },
     dist: {
-      src: ['<%= allhaml.options.in_dir %>/**/*.haml'],
-      dest: '<%= allhaml.options.out_dir %>'
+      src: ['<%= allhaml.options.inDir %>/**/*.haml'],
+      dest: '<%= allhaml.options.outDir %>'
     }
   },
 });
