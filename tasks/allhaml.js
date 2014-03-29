@@ -25,13 +25,13 @@ module.exports = function(grunt) {
 
       hamloption: '-q --no-escape-attrs',
 
-      in_dir: 'haml',
+      inDir: 'haml',
 
-      out_dir: 'html',
+      outDir: 'html',
 
-      in_ex: 'haml',
+      inEx: 'haml',
 
-      out_ex: 'html'
+      outEx: 'html'
 
 
     });
@@ -47,11 +47,11 @@ module.exports = function(grunt) {
     this.files.forEach(function(f) {
       var commands = [];
       async.forEach(f.src, function(src, callback){
-        var search_in_dir = new RegExp("^" + options.in_dir + "/");
-        var search_in_ex = new RegExp("." + options.in_ex + "$");
+        var search_in_dir = new RegExp("^" + options.inDir + "/");
+        var search_in_ex = new RegExp("." + options.inEx + "$");
         var htmlfile = '';
-        htmlfile = src.replace(search_in_dir, options.out_dir + '/');
-        htmlfile = htmlfile.replace(search_in_ex, '.' + options.out_ex);
+        htmlfile = src.replace(search_in_dir, options.outDir + '/');
+        htmlfile = htmlfile.replace(search_in_ex, '.' + options.outEx);
         htmlfile = options.pathRelativeTo + htmlfile;
         //
         var dirpath = path.dirname(htmlfile);
