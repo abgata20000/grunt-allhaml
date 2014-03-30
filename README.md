@@ -54,14 +54,14 @@ Default value: `'html'`
 
 Output directopry name
 
-####in_ex
+####inEx
 Type: `String`
 
 Default value: `'haml'`
 
 Input file extention name
 
-####out_ex
+####outEx
 Type: `String`
 
 Default value: `'html'`
@@ -81,7 +81,7 @@ grunt.initConfig({
     options: {
       inDir: 'haml',
       outDir: 'html',
-      out_ex: 'html'
+      ouEx: 'html'
     },
     dist: {
       src: ['<%= allhaml.options.inDir %>/**/*.haml'],
@@ -99,7 +99,7 @@ grunt.initConfig({
     options: {
       inDir: 'haml',
       outDir: 'html',
-      out_ex: 'html',
+      outEx: 'html',
       hamloption: ''
     },
     dist: {
